@@ -1,0 +1,27 @@
+# This file is part of the django-environ.
+#
+# Copyright (c) 2021, Serghei Iakovlev <egrep@protonmail.ch>
+# Copyright (c) 2013-2021, Daniele Faraglia <daniele.faraglia@gmail.com>
+#
+# For the full copyright and license information, please view
+# the LICENSE.txt file that was distributed with this source code.
+
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+---
+version: 2
+
+build:
+  os: ubuntu-20.04
+  tools:
+    # Keep version in sync with tox.ini (testenv:docs) and
+    # docs.yml (GitHub Action Workflow).
+    python: '3.10'
+
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
